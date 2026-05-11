@@ -100,13 +100,7 @@ nav.solid {
     radial-gradient(circle at 85% 75%, rgba(107,28,46,0.03) 0%, transparent 45%);
   pointer-events: none;
 }
-.hero-line-v {
-  position: absolute;
-  width: 1px; height: 55%;
-  background: linear-gradient(to bottom, transparent, rgba(107,28,46,0.12), transparent);
-  top: 22%; right: 20%;
-  pointer-events: none;
-}
+
 .hero-content {
   text-align: center;
   max-width: 780px;
@@ -537,6 +531,12 @@ nav.solid {
   display: block; margin-bottom: 0.4rem;
 }
 
+
+@media(max-width:768px){
+  #barriers .reveal[style*="grid-template-columns:1fr 2fr 2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -545,16 +545,17 @@ nav.solid {
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo">المشروع الوطني لامع — النسخة السادسة — نورة الراشد</div>
+  <div class="nav-logo">البيت في الميزان — نورة الراشد - 2026</div>
   <ul class="nav-links">
+    <li><a href="#idea">الأفكار</a></li>
+    <li><a href="#barriers" onclick="showBarriers(); return true;">العوائق والتغلب عليها</a></li>
   </ul>
 </nav>
 
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-pattern"></div>
-  <div class="hero-line-v"></div>
-
+  
   <div class="hero-content">
 
     <p class="hero-poem">البيت في الميزان</p>
@@ -603,7 +604,7 @@ nav.solid {
           <div class="founder-card-info">
             <h4>نورة الراشد</h4>
             <p>مسؤول أول — معمارية البيانات<br>بنك البحرين والكويت</p>
-            <span class="tag">مبادرة البيت في الميزان — المشروع الوطني لامع — النسخة السادسة</span>
+            <span class="tag">مبادرة البيت في الميزان</span>
           </div>
         </div>
       </div>
@@ -712,15 +713,21 @@ nav.solid {
           </ul>
         </div>
 
+        <div class="idea-side-card">
+          <span class="sc-num">الخيط الذي يربط هيئة لامع بمبادرة البيت في الميزان</span>
+          <p style="font-size:0.87rem;color:var(--mid-text);font-weight:300;line-height:1.8;margin-top:0.3rem">
+            الفكرة تبني "ذاكرة سلوكية" لدى الشباب قبل الأزمة، وهذا تحديداً ما يميز لامع: التدخل في صقل الشباب البحريني، بناء شخصية قيادية ذات تفكير استراتيجي في حل المشكلات.
+          </p>
+        </div>
+
       </div>
     </div>
 
   </div>
 </section>
-
-
+<div id="btn-to-idea2" style="text-align:center;padding:3rem 0 5rem;background:var(--white);"><button onclick="revealSection('idea2','btn-to-idea2')" style="display:inline-flex;align-items:center;gap:10px;padding:13px 34px;background:var(--burgundy);color:#fff;font-family:'Cairo',sans-serif;font-size:0.98rem;font-weight:600;border-radius:50px;border:none;cursor:pointer;box-shadow:0 8px 28px rgba(107,28,46,0.22);transition:all 0.35s ease;">ثمة فكرة أخرى تستحق التأمل <i class="fas fa-arrow-down" style="font-size:0.75rem"></i></button></div>
 <!-- ── IDEA 2 ── -->
-<section id="idea2" class="section-pad" style="background:var(--cream)">
+<section id="idea2" class="section-pad" style="background:var(--cream); display:none;">
   <div class="section-wrap">
 
     <div class="reveal" style="margin-bottom:2rem">
@@ -737,8 +744,8 @@ nav.solid {
           <h3 class="idea-main-title">ورش تدريب على المحادثات التي يهرب منها الجميع</h3>
           <p class="idea-main-body">
             كيف تتحدث عن المال؟<br>
-            كيف تقول لا لأهلك؟<br>
-            كيف تعبّر عن احتياجاتك دون أن تجرح؟
+            كيف تضع حدوداً صحية مع العائلة باحترام؟<br>
+            كيف تعبّر عن احتياجك بطريقة دبلوماسية محترمة؟
           </p>
         </div>
 
@@ -797,10 +804,10 @@ nav.solid {
         </div>
 
         <div class="idea-side-card">
-          <span class="sc-num">لماذا يناسب المشروع الوطني لامع؟</span>
+          <span class="sc-num">الخيط الذي يربط هيئة لامع بمبادرة البيت في الميزان</span>
           <h4>تدريب قيادي مقنّع</h4>
           <p style="font-size:0.87rem;color:var(--mid-text);font-weight:300;line-height:1.8;margin-top:0.3rem">
-            لأن القيادة في جوهرها هي إجراء محادثات صعبة، وهذا تدريب قيادي مقنّع في هيئة التأهيل الأسري.
+            لأن القيادة في جوهرها هي إجراء محادثات صعبة، وهذا تدريب قيادي مقنّع في بيئة للرقي الأسري.
           </p>
         </div>
 
@@ -809,12 +816,10 @@ nav.solid {
 
   </div>
 </section>
-
-
-
+<div id="btn-to-idea3" style="text-align:center;padding:3rem 0 5rem;background:var(--cream);display:none;"><button onclick="revealSection('idea3','btn-to-idea3')" style="display:inline-flex;align-items:center;gap:10px;padding:13px 34px;background:var(--burgundy);color:#fff;font-family:'Cairo',sans-serif;font-size:0.98rem;font-weight:600;border-radius:50px;border:none;cursor:pointer;box-shadow:0 8px 28px rgba(107,28,46,0.22);transition:all 0.35s ease;">الفكرة الثالثة تأخذنا إلى المال <i class="fas fa-arrow-down" style="font-size:0.75rem"></i></button></div>
 
 <!-- ── IDEA 3 ── -->
-<section id="idea3" class="section-pad" style="background:var(--white)">
+<section id="idea3" class="section-pad" style="background:var(--white); display:none;">
   <div class="section-wrap">
 
     <div class="reveal" style="margin-bottom:2rem">
@@ -830,7 +835,7 @@ nav.solid {
           <span class="idea-main-label">الفكرة الثالثة</span>
           <h3 class="idea-main-title">تحدي رقمي لتخطيط ميزانية بناء أسرة بمعطيات واقعية</h3>
           <p class="idea-main-body">
-            ثنائيان يخططان ميزانية بناء أسرة من المجتمع البحريني —
+            ثنائي يخطط ميزانية بناء أسرة من المجتمع البحريني —
             إيجار، تعليم أطفال، طوارئ طبية، ادخار —
             ويعرضان قراراتهما على مجتمع يناقشها ويصوّت عليها.
           </p>
@@ -874,9 +879,9 @@ nav.solid {
         </div>
 
         <div class="idea-side-card">
-          <span class="sc-num">لماذا يناسب المشروع الوطني لامع؟</span>
+          <span class="sc-num">الخيط الذي يربط هيئة لامع بمبادرة البيت في الميزان</span>
           <p style="font-size:0.87rem;color:var(--mid-text);font-weight:300;line-height:1.8;margin-top:0.3rem">
-            تعالج فكرة ميزانيتنا سبباً رئيسياً من أسباب الخلافات بأداة ثقافية خفيفة.
+            تعالج فكرة ميزانيتنا سبباً رئيسياً من أسباب الخلافات الأسرية بأداة ثقافية خفيفة.
           </p>
         </div>
 
@@ -885,10 +890,9 @@ nav.solid {
 
   </div>
 </section>
-
-
+<div id="btn-to-idea4" style="text-align:center;padding:3rem 0 5rem;background:var(--white);display:none;"><button onclick="revealSection('idea4','btn-to-idea4')" style="display:inline-flex;align-items:center;gap:10px;padding:13px 34px;background:var(--burgundy);color:#fff;font-family:'Cairo',sans-serif;font-size:0.98rem;font-weight:600;border-radius:50px;border:none;cursor:pointer;box-shadow:0 8px 28px rgba(107,28,46,0.22);transition:all 0.35s ease;">وأخيراً — فكرة عن ما لا يُقال عادةً <i class="fas fa-arrow-down" style="font-size:0.75rem"></i></button></div>
 <!-- ── IDEA 4 ── -->
-<section id="idea4" class="section-pad" style="background:var(--cream)">
+<section id="idea4" class="section-pad" style="background:var(--cream); display:none;">
   <div class="section-wrap">
 
     <div class="reveal" style="margin-bottom:2rem">
@@ -948,9 +952,9 @@ nav.solid {
         </div>
 
         <div class="idea-side-card">
-          <span class="sc-num">لماذا يناسب المشروع الوطني لامع؟</span>
+          <span class="sc-num">الخيط الذي يربط هيئة لامع بمبادرة البيت في الميزان</span>
           <p style="font-size:0.87rem;color:var(--mid-text);font-weight:300;line-height:1.8;margin-top:0.3rem">
-            يعتمد على علم النفس السلوكي بأسلوب خفيف وممتع.
+            تعتمد الفكرة على علم النفس السلوكي بأسلوب خفيف وممتع.
           </p>
         </div>
 
@@ -964,6 +968,48 @@ nav.solid {
 
 
 <script>
+function revealSection(sectionId, btnId) {
+  var section = document.getElementById(sectionId);
+  var btn = document.getElementById(btnId);
+  if (section) {
+    section.style.display = 'block';
+    setTimeout(function(){ section.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+  }
+  if (btn) btn.style.display = 'none';
+  // Show next button
+  var nextMap = {
+    'idea2': 'btn-to-idea3',
+    'idea3': 'btn-to-idea4',
+    'idea4': 'btn-to-barriers'
+  };
+  if (nextMap[sectionId]) {
+    var nextBtn = document.getElementById(nextMap[sectionId]);
+    if (nextBtn) nextBtn.style.display = 'block';
+  }
+}
+
+function toggleBarriers() {
+  var s = document.getElementById('barriers');
+  var icon = document.getElementById('barriers-icon');
+  if (!s) return;
+  if (s.style.display === 'none' || s.style.display === '') {
+    s.style.display = 'block';
+    if(icon) icon.style.transform = 'rotate(180deg)';
+    setTimeout(function(){ s.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+  } else {
+    s.style.display = 'none';
+    if(icon) icon.style.transform = 'rotate(0deg)';
+  }
+}
+
+function showBarriers() {
+  var s = document.getElementById('barriers');
+  if(s) {
+    s.style.display = 'block';
+    setTimeout(function(){ s.scrollIntoView({behavior:'smooth', block:'start'}); }, 100);
+  }
+}
+
 /* ── PARTICLES ── */
 (function(){
   const c = document.getElementById('canvas-bg');
@@ -1019,6 +1065,145 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 </script>
 
+
+
+
+<div id="btn-to-barriers" style="text-align:center; padding:3rem 0 5rem; background:var(--cream); display:none;">
+  <button onclick="toggleBarriers()" style="display:inline-flex; align-items:center; gap:10px;
+    padding:13px 34px;
+    background:var(--burgundy);
+    color:#fff;
+    font-family:'Cairo',sans-serif;
+    font-size:0.98rem; font-weight:600;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 8px 28px rgba(107,28,46,0.22);
+    transition:all 0.35s ease;" id="barriers-toggle-btn">
+    هل تواجه هذه الأفكار عوائق حقيقية؟
+    <i id="barriers-icon" class="fas fa-chevron-down" style="font-size:0.75rem; transition:transform 0.3s ease"></i>
+  </button>
+</div>
+
+
+<!-- ── BARRIERS ── -->
+<section id="barriers" style="background:var(--burgundy); padding:100px 0; display:none;">
+  <div class="section-wrap">
+
+    <div style="text-align:center; margin-bottom:3.5rem">
+      <p style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.8rem">التحديات والحلول</p>
+      <h2 style="font-family:'Cairo',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;line-height:1.35">
+        العوائق الحقيقية وكيف نتغلب عليها
+      </h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+
+      <div style="
+        background:rgba(255,255,255,0.07);
+        border:1px solid rgba(255,255,255,0.15);
+        border-radius:16px;
+        padding:2rem 2.2rem;
+        display:grid;
+        grid-template-columns:1fr 2fr 2fr;
+        gap:2rem;
+        align-items:start;
+        transition:all 0.3s ease;
+      ">
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">العائق</span>
+          <h4 style="font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;line-height:1.5">الحساسية الثقافية من الحديث عن الزواج والمال علناً</h4>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">الواقع</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">الحديث عن العلاقات الزوجية أو المال قبل الزواج في كثير من العوائل البحرينية يُعتبر حساساً اجتماعياً، خصوصاً للإناث.</p>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">التغلب</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">صُمِّمت المبادرة لتكون كـ"تطوير مهاري وقيادي" وليس "إرشاد للزواج". العنوان "البيت في الميزان" يعكس هذا التوجه تحديداً، فالمبادرة تخاطب العقل لا العاطفة.</p>
+        </div>
+      </div>
+
+      <div style="
+        background:rgba(255,255,255,0.07);
+        border:1px solid rgba(255,255,255,0.15);
+        border-radius:16px;
+        padding:2rem 2.2rem;
+        display:grid;
+        grid-template-columns:1fr 2fr 2fr;
+        gap:2rem;
+        align-items:start;
+        transition-delay:0.1s;
+      ">
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">العائق</span>
+          <h4 style="font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;line-height:1.5">صعوبة الوصول إلى الشباب في التوقيت الصحيح</h4>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">الواقع</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">معظم الشباب لا يفكر في هذه المواضيع بشكل جاد إلا حين يكون على وشك الخطوة، وهنا يكون متأخراً نسبياً.</p>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">التغلب</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">نحن لا ننتظر أن يأتي الشباب طوعاً. اخترت محتوى انستغرام التفاعلي للدخول للشباب عبر قنوات التواصل الاجتماعي، ومن خلال الجامعات، برامج الشباب، أو المشروع الوطني لامع نفسه.</p>
+        </div>
+      </div>
+
+      <div style="
+        background:rgba(255,255,255,0.07);
+        border:1px solid rgba(255,255,255,0.15);
+        border-radius:16px;
+        padding:2rem 2.2rem;
+        display:grid;
+        grid-template-columns:1fr 2fr 2fr;
+        gap:2rem;
+        align-items:start;
+        transition-delay:0.2s;
+      ">
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">العائق</span>
+          <h4 style="font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;line-height:1.5">الاستدامة — من يموّل ومن يستمر؟</h4>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">الواقع</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">كثير من المبادرات تنجح في نسخة أولى ثم تتلاشى.</p>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">التغلب</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">بنيت النموذج التنفيذي للمبادرة ليكون قابلاً للتكرار بموارد محدودة منذ البداية.</p>
+        </div>
+      </div>
+
+      <div style="
+        background:rgba(255,255,255,0.07);
+        border:1px solid rgba(255,255,255,0.15);
+        border-radius:16px;
+        padding:2rem 2.2rem;
+        display:grid;
+        grid-template-columns:1fr 2fr 2fr;
+        gap:2rem;
+        align-items:start;
+        transition-delay:0.3s;
+      ">
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">العائق</span>
+          <h4 style="font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;line-height:1.5">قياس الأثر</h4>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">الواقع</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">تغيير السلوك صعب القياس — وصناع القرار يريدون أرقاماً.</p>
+        </div>
+        <div>
+          <span style="font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.45);display:block;margin-bottom:0.4rem">التغلب</span>
+          <p style="font-size:0.87rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.85">تصميم أدوات قياس بسيطة، استبيان قبل وبعد كل جلسة، ومتابعة بشكل فردي لمدة ٦ أشهر.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ── CLOSING ── -->
 <section id="closing">
   <div class="closing-inner">
@@ -1037,7 +1222,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       </a>
     </div>
 
-    <p class="closing-footer reveal-fade" style="margin-top:2rem">المشروع الوطني لامع — النسخة السادسة — نورة الراشد</p>
+    <p class="closing-footer reveal-fade" style="margin-top:2rem">المقترح التنفيذي لمبادرة البيت في الميزان — 2026</p>
     <p class="closing-footer reveal-fade" style="margin-top:0.5rem; opacity:0.3">تم تصميم الموقع في مايو 2026 — نورة الراشد</p>
 
   </div>
